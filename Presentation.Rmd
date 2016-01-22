@@ -1,0 +1,33 @@
+---
+title: "Prüfungstutorium QM1"
+author: "Tobi, Lukas"
+date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
+output:
+  ioslides_presentation:
+    css: styles.css
+    fig_height: 3.5
+    fig_width: 8
+    incremental: yes
+    logo: RStudio-Ball.png
+    self_contained: no
+    smaller: yes
+    transition: slower
+    widescreen: yes
+  html_document: 
+    fig_caption: yes
+    fig_width: 9
+    self_contained: no
+    number_sections: yes
+    toc: yes
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.path = "plots/")
+
+# Package init script
+#suppressWarnings(source("http://stats.jemu.name/qm/tools/package-init.R"))
+library(sjPlot)
+
+# NGO Datensatz einlesen
+load(url("http://stats.jemu.name/qm/data/ngo"))
+```

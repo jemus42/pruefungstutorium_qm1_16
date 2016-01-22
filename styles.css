@@ -1,0 +1,7 @@
+pre {
+    margin-bottom: 0 !important;
+}
+
+slides > slide > hgroup + article {
+    margin-top: 10px !important;
+}
