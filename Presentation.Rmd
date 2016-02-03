@@ -5,7 +5,7 @@ date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
   ioslides_presentation:
     css: styles.css
-    fig_height: 3.5
+    fig_height: 4
     fig_width: 8
     incremental: yes
     logo: RStudio-Ball.png
@@ -22,7 +22,7 @@ output:
 ---
 
 ```{r global_options, include=FALSE}
-knitr::opts_chunk$set(fig.path = "plots/")
+knitr::opts_chunk$set(fig.path = "plots/", echo = F, warning = F, message = F)
 
 # Package init script
 #suppressWarnings(source("http://stats.jemu.name/qm/tools/package-init.R"))
@@ -30,20 +30,24 @@ library(sjPlot)
 library(dplyr)
 library(knitr)
 library(ggplot2)
+library(qmtut)
 
 # NGO Datensatz einlesen
 load(url("http://stats.jemu.name/qm/data/ngo"))
+
+# 3 digits are anough
+options(digits = 3)
 ```
 
 # Intro
 
 Blubb
 
-## Aufgabe 1| Faktorenanalyse {.flexbox .vcenter}
+## Aufgabe 1| Faktorenanalyse
 
 > Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
 
-```{r A01_data, echo = FALSE}
+```{r A01_data}
 a01 <- data.frame(Merkmal = paste0("A", 1:15),
            K1 = c(-.724, -.294, .665, .639, -.599, .388, .643, -.544,
                   -.274, .571, -.230, .737, .789, .672, .630),
@@ -75,9 +79,21 @@ Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen kö
 > Führen Sie eine Hauptkomponentenanalyse für den FKV- Datensatz durch. Prüfen Sie, welche Faktoren Sie zuvor inhaltlich angedacht hatten und welche Faktoren die Testautoren benannt haben. Stimmen die statistischen Daten damit überein?
 
 
-## Aufgabe 3 | Aufgabenzettel 1 & 2
+## Aufgabe 3 | Aufgabenzettel 1 & 2 {.flexbox .vcenter}
 
 > Sie haben Werte des Merkmals „Unterrichtsstunden“ u.a. zur Berechnung der Variabilitätsmaße und Zen- tralmaße verwendet. Reflektieren Sie die Zentral- und Variabilitätsmaße. Sind alle Statistiken gut geeignet?
+
+* Variation = `r var(ngo$stunzahl) * (length(ngo$stunzahl) + 1)` — Varianz = `r var(ngo$stunzahl)` — Standardabweichung = `r sd(ngo$stunzahl)`
+
+```{r a03}
+mvalues <- data.frame(Zentralmaß = factor(c("Mittelwert", "Median", "Modus")),
+                      Wert = c(mean(ngo$stunzahl), median(ngo$stunzahl), modus(ngo$stunzahl)))
+
+ggplot(data = ngo, aes(x = stunzahl)) +
+  geom_histogram(binwidth = 1) +
+  geom_vline(data = mvalues, aes(xintercept = Wert, colour = Zentralmaß), size = 2) +
+  labs(x = "Unterrsichtsstunden", y = "Häufigkeit")
+```
 
 ## Aufgabe 4 | Aufgabenzettel 5
 
