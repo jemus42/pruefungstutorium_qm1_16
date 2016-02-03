@@ -156,6 +156,21 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 <img src='http://dump.jemu.name/zGrB9.png' width='90%'>
 
+> Es ist die Statistik „Kappa“ -ohne Software- zu ermitteln und anschließend zu interpretieren.
+
+## Aufgabe 12 | Kappa
+
+$$ Kappa = \frac{h_b - h_e}{1 - h_e} $$
+$$ h_b = \frac{1}{n} \sum^m_{j = 1} f_{j,j} $$
+$$ h_e = \frac{1}{n} \sum^m_{j = 1} f_{e_{j,j}} $$
+
+## Aufgabe 12 | Berechnung Kappa
+
+$$ n = 27 $$
+$$ h_b = \frac{1}{27} \cdot (8 + 12) \approx 0,741 $$
+$$ h_e = \frac{1}{27} \cdot (4,\bar{8} + 8,\bar{8}) \approx 0,51 $$
+$$ Kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47 $$
+
 ## Aufgabe 13 
 
 > Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Vergleich zu dem Wert 0):
