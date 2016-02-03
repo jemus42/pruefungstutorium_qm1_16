@@ -27,7 +27,133 @@ knitr::opts_chunk$set(fig.path = "plots/")
 # Package init script
 #suppressWarnings(source("http://stats.jemu.name/qm/tools/package-init.R"))
 library(sjPlot)
+library(dplyr)
+library(knitr)
+library(ggplot2)
 
 # NGO Datensatz einlesen
 load(url("http://stats.jemu.name/qm/data/ngo"))
 ```
+
+# Intro
+
+Blubb
+
+## Aufgabe 1| Faktorenanalyse {.flexbox .vcenter}
+
+> Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
+
+```{r A01_data, echo = FALSE}
+a01 <- data.frame(Merkmal = paste0("A", 1:15),
+           K1 = c(-.724, -.294, .665, .639, -.599, .388, .643, -.544,
+                  -.274, .571, -.230, .737, .789, .672, .630),
+           K2 = c(.351, .642, .310, .2, .622, .39, .398, .429, .407, .334, 
+                  .177, 0, .256, -.024, .134),
+           K3 = c(.036, -.01, -.311, .053, .001, -.530, -.003, .349, .266,
+                  -.323, .412, .389, .104, .520, .366)) 
+
+a01 %>% head %>% kable()
+```
+
+...
+
+## Aufgabe 1
+
+a) Was bedeuten die drei Werte innerhalb der zweiten Zeile?
+b) Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
+c) Welchen Wert besitzt der drittgrößte Eigenwert?
+d) Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten)
+Merkmale wird durch den 3. Faktor erklärt?
+e) Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
+f) Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen
+Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
+
+
+## Aufgabe 2 | Faktorenanalyse
+
+> Führen Sie eine Hauptkomponentenanalyse für den FKV- Datensatz durch. Prüfen Sie, welche Faktoren Sie zuvor inhaltlich angedacht hatten und welche Faktoren die Testautoren benannt haben. Stimmen die statistischen Daten damit überein?
+
+
+## Aufgabe 3 | Aufgabenzettel 1 & 2
+
+> Sie haben Werte des Merkmals „Unterrichtsstunden“ u.a. zur Berechnung der Variabilitätsmaße und Zen- tralmaße verwendet. Reflektieren Sie die Zentral- und Variabilitätsmaße. Sind alle Statistiken gut geeignet?
+
+## Aufgabe 4 | Aufgabenzettel 5
+
+> Sie haben folgende Zahlen vorliegen: `7, 9, 10, 11, 11, 14, 15, 16`. Berechnen Sie für diese Werte die Standardabweichung per Hand.
+
+## Aufgabe 5 (Alt: Aufgabenzettel 6)
+
+> Berechnen Sie für die Werte `23, 27` und `31` von „stunzahl“ (Auswahl der Schülerinnen der 13. Klasse) die standardisierten Werte per Hand.
+
+## Aufgabe 6 (Alt: Aufgabenzettel 6)
+
+> Ein Merkmal ist $N(3, 2)$- verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen 2 und 4,5 besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als 4 sind. (Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Stan- dardnormalverteilungstabelle)
+
+## Aufgabe 7 | Aufgabenzettel 7
+
+> Eine Person hat in drei Tests (T1, T2 und T3) folgende drei Punktzahlen erreicht:
+  
+> `T1=10 T2=10 T3=10`
+
+> Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der Wert 20 ermittelt. Die Standardabweichungen betragen bei T1=2, T2=1 und bei T3=1,5.
+
+> a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
+
+> b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen? Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
+
+## Aufgabe 8 | Aufgabenzettel 8
+
+> Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den Chi-Quadrat Wert so- wie C und V per Hand. Interpretieren Sie diese Ergebnisse.
+
+## Aufgabe 9 | Aufgabenzettel 9
+
+> Sie haben die Werte der Variablen „Begabung“ klassiert, indem die Werte 1, 2 und 3 in den neuen Wert 1, die Werte 4, 5 und 6 in den neuen Wert 2 und die Werte 7, 8 und 9 in den neuen Wert 3 rekodiert wurden. Berechnen Sie auf Basis einer Kontingenztabelle der rekodierten Variablen „Begabung“ und „Jahrgang“ Folgendes per Hand:
+
+a) Die Anzahl der konkordanten Paare 
+b) Die Anzahl der diskordanten Paare 
+c) Die Anzahl der Bindungen
+d) Welche Schlüsse kann man nur aufgrund a) und b) und c) bzgl. der statistischen Beziehung ziehen? 
+e) Berechnen Sie aufgrund a) und b) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
+f) Wäre eine andere Statistik geeigneter?
+
+## Aufgabe 10 | Aufgabenzettel 10
+
+> Beantworten Sie folgende Fragen:
+
+a) Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?
+b) Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?
+c) Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
+d) Welche Eigenschaften besitzt die Regressionsgerade?
+
+## Aufgabe 11 | Aufgabenzettel 11
+
+> Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herlei- tung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
+
+> Gewicht erster Messzeitpunkt: 120, 95, 100, 110, 90 
+> Gewicht zweiter Messzeitpunkt: 110, 90, 110, 115, 100
+
+## Aufgabe 12 | Aufgabenzettel 12
+
+> 27 Patienten sind von zwei Ärzten untersucht und im Hinblick auf ihren Gesundheitszustand in der folgenden Form als krank bzw. gesund eingestuft worden:
+
+<img src='http://dump.jemu.name/zGrB9.png' width='90%'>
+
+## Aufgabe 13 
+
+> Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Vergleich zu dem Wert 0):
+
+![](http://dump.jemu.name/Ar5MX.png)
+
+## Aufgabe 14
+
+> Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm.
+
+## Aufgabe 15
+
+> Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
+
+## Aufgabe 16
+
+> Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
