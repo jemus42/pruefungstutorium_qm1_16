@@ -131,8 +131,8 @@ Ein Merkmal ist $N(3, 2)$- verteilt. Berechnen Sie die Wahrscheinlichkeit dafür
 * $P(x < 4) =$ `pnorm(4, mean = 3, sd = 2)` $= `r pnorm(4, mean = 3, sd = 2)`$
 
 ```{r a06, fig.height=3, fig.width=5, fig.show='hold'}
-xpnorm(2, mean = 4, sd = 2, verbose = F, invisible = T)
-xpnorm(4.5, mean = 4, sd = 2, verbose = F, invisible = T)
+xpnorm(2, mean = 3, sd = 2, verbose = F, invisible = T)
+xpnorm(4.5, mean = 3, sd = 2, verbose = F, invisible = T)
 ```
 
 
