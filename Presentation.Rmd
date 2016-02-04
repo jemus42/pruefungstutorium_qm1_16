@@ -189,6 +189,17 @@ b) Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoef
 c) Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
 d) Welche Eigenschaften besitzt die Regressionsgerade?
 
+##
+
+> Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?
+
+- **Residuum**:  
+- Der Abstand zwischen einem beobachteten Wert und der Regressionsgeraden
+- **Niveaukonstante**:  
+- der Wert, bei dem die Regressionsgerade die y-Achse schneidet  (oder wie früher in Mathe: der *y-Achsenabschnitt*)
+- **Steigungskoeffizient**:  
+- gibt an, um wieviele Einheiten sich y verändert, wenn sich x umd *eine* Einheit ändert
+
 ## Aufgabe 11 | Aufgabenzettel 11
 
 Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
