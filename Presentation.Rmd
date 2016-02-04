@@ -33,7 +33,7 @@ library(ggplot2)
 library(qmtut)
 
 # NGO Datensatz einlesen
-load(url("http://stats.jemu.name/qm/data/ngo"))
+#load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
 
 # 3 digits are anough
 options(digits = 3)
@@ -99,13 +99,25 @@ ggplot(data = ngo, aes(x = stunzahl)) +
 
 > Sie haben folgende Zahlen vorliegen: `7, 9, 10, 11, 11, 14, 15, 16`. Berechnen Sie für diese Werte die Standardabweichung per Hand.
 
-## Aufgabe 5 (Alt: Aufgabenzettel 6)
+## Aufgabe 5 | Aufgabenzettel 6
 
 > Berechnen Sie für die Werte `23, 27` und `31` von „stunzahl“ (Auswahl der Schülerinnen der 13. Klasse) die standardisierten Werte per Hand.
 
-## Aufgabe 6 (Alt: Aufgabenzettel 6)
+```{r a05}
+values <- ngo %>% filter(jahrgang == "13", geschl == "Weiblich") %>% 
+  summarize(mean = mean(stunzahl), sd = sd(stunzahl))
+```
 
-> Ein Merkmal ist $N(3, 2)$- verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen 2 und 4,5 besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als 4 sind. (Anmerkung: Sollte in der Klausur eine solche Frage auftauchen, erhalten Sie eine Stan- dardnormalverteilungstabelle)
+z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
+
+* Werte: $\bar{x} = `r values$mean`$ & $\sigma = `r values$sd`$
+* $23 \rightarrow \frac{23 - 29.52}{7.78} \approx -0.838$
+* $27 \rightarrow \frac{27 - 29.52}{7.78} \approx -1.13$
+* $31 \rightarrow \frac{31 - 29.52}{7.78} \approx 0.26$
+
+## Aufgabe 6 | Aufgabenzettel 6
+
+> Ein Merkmal ist $N(3, 2)$- verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen 2 und 4,5 besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als 4 sind.
 
 ## Aufgabe 7 | Aufgabenzettel 7
 
