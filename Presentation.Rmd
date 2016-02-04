@@ -127,7 +127,7 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 
 Ein Merkmal ist $N(3, 2)$- verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen 2 und 4,5 besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als 4 sind.
 
-* $P(2 < x < 4.5) =$ `pnorm(4.5, mean = 3, sd = 2) - pnorm(2, mean = 3, sd = 2)` $= `r pnorm(4.5, mean = 3, sd = 2) - pnorm(2, mean = 3, sd = 1)`$
+* $P(2 < x < 4.5) =$ `pnorm(4.5, mean = 3, sd = 2) - pnorm(2, mean = 3, sd = 2)` $= `r pnorm(4.5, mean = 3, sd = 2) - pnorm(2, mean = 3, sd = 2)`$
 * $P(x < 4) =$ `pnorm(4, mean = 3, sd = 2)` $= `r pnorm(4, mean = 3, sd = 2)`$
 
 ```{r a06, fig.height=3, fig.width=5, fig.show='hold'}
@@ -147,9 +147,18 @@ Als Mittelwert wurde für T1 der Wert 10, für T2 der Wert 15 und für T3 der We
 a) In welchem der Tests hat die Person am besten abgeschnitten? Und warum?
 b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen? Und welche Informationen sind wichtig für Sie, um eine geeignete Zuordnung zu wählen?
 
-## Aufgabe 8 | Aufgabenzettel 8
+## Aufgabe 8 | Aufgabenzettel 8 {.flexbox .vcenter}
 
 Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den Chi-Quadrat Wert sowie C und V per Hand. Interpretieren Sie diese Ergebnisse.
+
+```{r a08}
+tabelle <- sjt.xtab(ngo$abschalt, ngo$jahrgang, 
+                    showRowPerc = T, showExpected = T, showLegend = F, showSummary = F,
+                    useViewer = F, no.output = T)
+```
+
+`r tabelle$knitr`
+
 
 ## Aufgabe 9 | Aufgabenzettel 9
 
