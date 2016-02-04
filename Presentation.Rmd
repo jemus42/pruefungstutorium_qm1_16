@@ -198,7 +198,36 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 - **Niveaukonstante**:  
 - der Wert, bei dem die Regressionsgerade die y-Achse schneidet  (oder wie früher in Mathe: der *y-Achsenabschnitt*)
 - **Steigungskoeffizient**:  
-- gibt an, um wieviele Einheiten sich y verändert, wenn sich x umd *eine* Einheit ändert
+- gibt an, um wieviele Einheiten sich y verändert, wenn sich x um *eine* Einheit ändert
+
+##
+
+> Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?
+
+$$Cov_{x, y} = s_{x, y} = \frac { (x_i - \bar{x})(y_i - \bar{y}) }{ \sigma_{x} \cdot \sigma_{y} }$$
+
+$$ b = \frac { s_{x, y} }{ s_{x}^2 } $$
+
+##
+
+> Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
+
+```{r A10_c}
+a10c <- data.frame("x" = c(1:100),
+                   "y" = rep(6, 100))
+
+ggplot(a10c, aes(x = x, y = y)) +
+  geom_smooth(method = "lm", se = F) +
+  geom_point(position = "jitter") +
+  labs(x = "", y = "") + theme_bw()
+```
+
+##
+
+> Welche Eigenschaften besitzt die Regressionsgerade?
+
+- ...ist die Gerade mit den geringsten Residuenquadraten
+- verläuft **immer** durch $P( \bar{x} | \bar{y} )$
 
 ## Aufgabe 11 | Aufgabenzettel 11
 
