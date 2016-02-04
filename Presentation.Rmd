@@ -99,6 +99,13 @@ ggplot(data = ngo, aes(x = stunzahl)) +
 
 > Sie haben folgende Zahlen vorliegen: `7, 9, 10, 11, 11, 14, 15, 16`. Berechnen Sie für diese Werte die Standardabweichung per Hand.
 
+Standardabweichung: $$\sigma = \sqrt{\frac{1}{n-1} \sum^n_{i = 1} (x_i - \bar{x})^2}$$
+
+* $\bar{x} = 11.625$
+* $\sigma = \sqrt{\frac{1}{8-1} \cdot (7-11.625)^2 + (9-11.625)^2 + \ldots + (16-11.625)^2}$
+* $\sigma = \sqrt{\frac{1}{7} \cdot 21.39 + 6.89 + \ldots + 19.14} = \sqrt{\frac{1}{7} \cdot 67.875}$
+* $\sigma = \sqrt{9.696} \approx 3.114$
+
 ## Aufgabe 5 | Aufgabenzettel 6
 
 > Berechnen Sie für die Werte `23, 27` und `31` von „stunzahl“ (Auswahl der Schülerinnen der 13. Klasse) die standardisierten Werte per Hand.
