@@ -83,7 +83,7 @@ Führen Sie eine Hauptkomponentenanalyse für den FKV- Datensatz durch. Prüfen 
 ##
 
 ```{r A02_pca}
-pca <- sjp.pca(fkv[-1], numberOfFactors = 5,
+pca <- sjt.pca(fkv[-1], numberOfFactors = 5,
                useViewer = F, no.output = T)
 ```
 
