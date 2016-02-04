@@ -34,17 +34,17 @@ library(qmtut)
 library(mosaic)
 
 # NGO Datensatz einlesen
-#load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
+# load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
 
-# 3 digits are anough
+# 3 digits are enough
 options(digits = 3)
 ```
 
 # Intro
 
-This is Prüfungstutorium, it tutoriums Prüfung
+This is Prüfungstutorium, it tutors Prüfung
 
-## Aufgabe 1| Faktorenanalyse
+## Aufgabe 1 | Faktorenanalyse
 
 Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
 
