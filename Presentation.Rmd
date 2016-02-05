@@ -168,6 +168,28 @@ tabelle <- sjt.xtab(ngo$abschalt, ngo$jahrgang,
 
 `r tabelle$knitr`
 
+## Aufgabe 8 | Chi-Quadrat und darauf basierende Statistiken {.flexbox .vcenter}
+
+$$\chi^2 = \sum_{\text{Alle Zellen}} \frac{(f_b - f_e)^2}{f_e}$$
+
+* $\chi^2 = \frac{(57 - 54)^2}{54} + \frac{(53 - 56)^2}{56} + \frac{(28 - 28)^2}{28} + \ldots + \frac{(22 - 22)^2}{22}$
+* $\chi^2 = 0.1\bar{6} + 0.161 + 0 + \ldots + 0$
+* $\chi^2 \approx 0.544$
+
+## Aufgabe 8 | Chi-Quadrat und darauf basierende Statistiken {.flexbox .vcenter}
+
+### Kontingenzkoeffizient C
+
+$$C = +\sqrt{\frac{\chi^2}{\chi^2 + n}}$$
+
+* $C = \sqrt{\frac{0.544}{0.544 + 246}} \approx 0.047$
+
+### Cramers V
+
+$$\text{Cramers V} = +\sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}}$$
+
+* $r = 2$ und $c = 3 \rightarrow min(1, 2) = 1$
+* $V = \sqrt{\frac{0.544}{246 \cdot 1}} \approx 0.047$
 
 ## Aufgabe 9 | Aufgabenzettel 9
 
