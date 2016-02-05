@@ -10,6 +10,6 @@ rmarkdown::render(input         = "Presentation.Rmd",
 
 ## Push to my filedump
 
-if (system("whoami", intern = TRUE) == "Lukas" & Sys.Date() > "2016-02-05") {
-  file.copy("*html", "~/repos/R/Tutorium/qm-sync/QM1/", recursive = TRUE)
+if (system("whoami", intern = TRUE) == "Lukas") {
+  system(command = "cp *html ~/repos/R/Tutorium/qm-sync/QM1/")
 }
