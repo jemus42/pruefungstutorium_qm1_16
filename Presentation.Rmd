@@ -47,10 +47,22 @@ options(digits = 3)
 
 This is Prüfungstutorium, it tutors Prüfung
 
+## Agenda {.flexbox .vcenter}
+
+<div class = "center">
+1. Aufgaben besprechen
+2. Fragen klären
+3. Angrenzende Theorie besprechen
+
+* Erfahrungsgemäß reicht die Zeit **entweder** für alle Aufgaben, **oder** für alle Fragen.  
+* Choose wisely.
+</div>
+
 ## Aufgabe 1 | Faktorenanalyse
 
 Im Rahmen einer Hauptkomponentenanalyse wurde die folgende Komponenten-Matrix ermittelt:
 
+<div class = "columns-2">
 ```{r A01_data}
 a01 <- data.frame(Merkmal = paste0("A", 1:15),
            K1 = c(-.724, -.294, .665, .639, -.599, .388, .643, -.544,
@@ -60,10 +72,10 @@ a01 <- data.frame(Merkmal = paste0("A", 1:15),
            K3 = c(.036, -.01, -.311, .053, .001, -.530, -.003, .349, .266,
                   -.323, .412, .389, .104, .520, .366)) 
 
-a01 %>% head %>% kable()
+a01 %>% kable()
 ```
 
-...
+</div>
 
 ## Aufgabe 1
 
