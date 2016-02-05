@@ -258,7 +258,7 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 - **Steigungskoeffizient**:  
 - gibt an, um wieviele Einheiten sich y verändert, wenn sich x um *eine* Einheit ändert
 
-##
+## Aufgabe 10 
 
 > **Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?**
 
@@ -274,7 +274,7 @@ $$ b = \frac { s_{x, y} }{ s_{x}^2 } $$
 
 $$ z_i = \frac {x_i - \bar{x} }{ \sigma_x }$$
 
-##
+## Aufgabe 10 
 
 > **Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?**
 
@@ -288,7 +288,7 @@ ggplot(a10c, aes(x = x, y = y)) +
   labs(x = "", y = "") + theme_bw()
 ```
 
-##
+## Aufgabe 10 
 
 > **Welche Eigenschaften besitzt die Regressionsgerade?**
 
@@ -302,7 +302,7 @@ Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren 
 Gewicht erster Messzeitpunkt: 120, 95, 100, 110, 90  
 Gewicht zweiter Messzeitpunkt: 110, 90, 110, 115, 100
 
-##
+## Aufgabe 11
 
 > **Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung.**
 
@@ -318,7 +318,7 @@ $$ r = \frac
           \cdot 
           \sum_{i=1}^n \sqrt{ \frac {\left( {y_i} - \bar{y} \right)^2}{n-1} } }$$
 
-##
+## Aufgabe 11
 
 > **Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:**
 
