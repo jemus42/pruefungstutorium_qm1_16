@@ -9,14 +9,14 @@ output:
     fig_width: 8
     incremental: yes
     logo: RStudio-Ball.png
-    self_contained: no
+    self_contained: yes
     smaller: yes
     transition: slower
     widescreen: yes
   html_document: 
     fig_caption: yes
     fig_width: 9
-    self_contained: no
+    self_contained: yes
     number_sections: no
     toc: yes
 ---
