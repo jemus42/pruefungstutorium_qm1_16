@@ -188,9 +188,9 @@ $$C = +\sqrt{\frac{\chi^2}{\chi^2 + n}}$$
 
 * $C = \sqrt{\frac{0.544}{0.544 + 246}} \approx 0.047$
 
-### Cramers V
+### Cramer's V
 
-$$\text{Cramers V} = +\sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}}$$
+$$\text{Cramer's V} = +\sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}}$$
 
 * $r = 2$ und $c = 3 \rightarrow min(1, 2) = 1$
 * $V = \sqrt{\frac{0.544}{246 \cdot 1}} \approx 0.047$
@@ -206,7 +206,7 @@ d) Welche Schlüsse kann man nur aufgrund a) und b) und c) bzgl. der statistisch
 e) Berechnen Sie aufgrund a) und b) den Wert für Gamma. Besteht ein statistischer Zusammenhang? 
 f) Wäre eine andere Statistik geeigneter?
 
-## Aufgabe 9 | Kontingenztabelle
+## Aufgabe 9 | Kontingenztabelle {.flexbox .vcenter}
 
 ```{r a09}
 ngo %<>% mutate(begabung_k = car::recode(begabung, "1:3=1; 4:6=2; 7:9=3"))
@@ -219,6 +219,25 @@ tabelle <- sjt.xtab(ngo$begabung_k, ngo$jahrgang,
 
 `r tabelle$knitr`
 
+<br \>
+
+* **Konkordant**: $1 \cdot (46+26+54+24) + 63 \cdot (54+24) + 46 \cdot (24) = 6168$
+* **Diskordant**: $26 \cdot (54 + 36) + 46 \cdot (36) = 3996$
+* **Bindungen**: $1 \cdot (0 + 0) + 63 \cdot (46 + 26) + 46 \cdot 26 + 36 \cdot (54 + 24) + 54 \cdot 24  = 9836$
+
+## Aufgabe 9 | Gamma und verwandte Statistiken {.flexbox .vcenter}
+
+$$\text{Gamma} = \frac{N_c - N_d}{N_c + N_d}$$
+
+* $\gamma = \frac{6168 - 3996}{6168 + 3996} \approx 0.214$
+
+### Somer's d
+
+$$\text{Somer's d} = \frac{N_c - N_d}{N_c + N_d + t}$$
+
+* Somer's d $= \frac{6168 - 3996}{6168 + 3996 + 9836} = 0.1086$
+
+
 ## Aufgabe 10 | Aufgabenzettel 10
 
 Beantworten Sie folgende Fragen:
@@ -228,7 +247,7 @@ b) Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoef
 c) Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
 d) Welche Eigenschaften besitzt die Regressionsgerade?
 
-##
+## Aufgabe 10 
 
 > **Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?**
 
