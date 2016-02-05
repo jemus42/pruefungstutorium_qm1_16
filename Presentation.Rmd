@@ -127,7 +127,7 @@ values <- ngo %>% filter(jahrgang == "13", geschl == "Weiblich") %>%
 
 z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 
-* Werte: $\bar{x} = `r values$mean`$ & $\sigma = `r values$sd`$
+* Werte: $\bar{x} = `r values$mean`$ und $\sigma = `r values$sd`$
 * $23 \rightarrow \frac{23 - 29.52}{7.78} \approx -0.838$
 * $27 \rightarrow \frac{27 - 29.52}{7.78} \approx -1.13$
 * $31 \rightarrow \frac{31 - 29.52}{7.78} \approx 0.26$
@@ -191,7 +191,7 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 ##
 
-> Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?
+> **Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?**
 
 - **Residuum**:  
 - Der Abstand zwischen einem beobachteten Wert und der Regressionsgeraden
@@ -202,7 +202,7 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 ##
 
-> Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?
+> **Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?**
 
 #### Kovarianz
 
@@ -218,7 +218,7 @@ $$ z_i = \frac {x_i - \bar{x} }{ \sigma_x }$$
 
 ##
 
-> Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?
+> **Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?**
 
 ```{r A10_c}
 a10c <- data.frame("x" = c(1:100),
@@ -232,7 +232,7 @@ ggplot(a10c, aes(x = x, y = y)) +
 
 ##
 
-> Welche Eigenschaften besitzt die Regressionsgerade?
+> **Welche Eigenschaften besitzt die Regressionsgerade?**
 
 - ...ist die Gerade mit den geringsten Residuenquadraten
 - verläuft **immer** durch $P( \bar{x} | \bar{y} )$
@@ -243,6 +243,46 @@ Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren 
 
 Gewicht erster Messzeitpunkt: 120, 95, 100, 110, 90  
 Gewicht zweiter Messzeitpunkt: 110, 90, 110, 115, 100
+
+##
+
+> **Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung.**
+
+#### Pearson's r
+
+in kurz:
+$$r = \frac { s_{x, y} }{ \sigma_{x} \cdot \sigma_{y} }$$
+
+in lang:
+$$ r = \frac 
+        { \sum_{i=1}^n \frac { \left( y_{i} - \bar{y}\right) \left( x_{i} - \bar{x}\right) }{ n-1} }
+        { \sum_{i=1}^n \sqrt{ \frac {\left( {x_i} - \bar{x} \right)^2}{n-1} } 
+          \cdot 
+          \sum_{i=1}^n \sqrt{ \frac {\left( {y_i} - \bar{y} \right)^2}{n-1} } }$$
+
+##
+
+> **Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:**
+
+```{r A11}
+Diaet <- data.frame("Messung_1" = c(120, 95, 100, 110, 90),
+                    "Messung_2" = c(110, 90, 110, 115, 100))
+
+```
+
+Zeitpunkt | Mittelwert | Standardabweichung
+----------|------------|--------------------
+Messung 1 | `r mean(Diaet$Messung_1)` | `r round(sd(Diaet$Messung_1), 0)`
+Messung 2 | `r mean(Diaet$Messung_2)` | `r sd(Diaet$Messung_2)`
+
+$$Cov_{x, y} = `r cov(Diaet$Messung_1, Diaet$Messung_2)`$$
+
+- also ist **r** gleich:  
+$$ \frac 
+      {`r cov(Diaet$Messung_1, Diaet$Messung_2)`}
+      {`r round(sd(Diaet$Messung_1), 0)` \cdot `r sd(Diaet$Messung_2)`}
+  = `r cor(Diaet$Messung_1, Diaet$Messung_2)`$$
+
 
 ## Aufgabe 12 | Aufgabenzettel 12
 
