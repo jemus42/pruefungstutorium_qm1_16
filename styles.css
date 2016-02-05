@@ -5,3 +5,16 @@ pre {
 slides > slide > hgroup + article {
     margin-top: 10px !important;
 }
+
+/* I tried to fiddle with the pres resolution. This is hard.
+   Left this here in case I ever need it.
+
+body slides > slide
+{
+  width: 1920px;
+  height: 1080px;
+  margin-top: -540px;
+  margin-left: -960px;
+}
+
+*/
