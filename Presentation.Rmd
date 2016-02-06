@@ -275,7 +275,7 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 * **Steigungskoeffizient**:  
     + gibt an, um wieviele Einheiten sich y verändert, wenn sich x um *eine* Einheit ändert
 
-## Aufgabe 10 | Beispiel
+## Aufgabe 10 - Beispiel
 
 ![](http://stats.jemu.name/qm/meta/Teilnehmer_files/figure-html/plots_byWeek-2.png)
 
@@ -397,6 +397,16 @@ Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu ver
 ## Aufgabe 15
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
+
+- Verwirrung
+- Kopfschmerzen
+- tiefer Hass auf die Welt und all ihre Bewohnenden
+
+## Aufgabe 15
+
+- (Multi-)Kolinearität
+- Partialkorrelationen
+
 
 ## Aufgabe 16
 
