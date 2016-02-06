@@ -107,7 +107,7 @@ pca <- sjt.pca(fkv[-1], numberOfFactors = 5,
 
 ## Aufgabe 3 | Aufgabenzettel 1 & 2 {.flexbox .vcenter}
 
-Sie haben Werte des Merkmals „Unterrichtsstunden“ u.a. zur Berechnung der Variabilitätsmaße und Zen- tralmaße verwendet. Reflektieren Sie die Zentral- und Variabilitätsmaße. Sind alle Statistiken gut geeignet?
+Sie haben Werte des Merkmals „Unterrichtsstunden“ u.a. zur Berechnung der Variabilitätsmaße und Zentralmaße verwendet. Reflektieren Sie die Zentral- und Variabilitätsmaße. Sind alle Statistiken gut geeignet?
 
 * Variation = `r var(ngo$stunzahl) * (length(ngo$stunzahl) + 1)` — Varianz = `r var(ngo$stunzahl)` — Standardabweichung = `r sd(ngo$stunzahl)`
 
@@ -267,12 +267,13 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 > **Was versteht man unter einem Residuum, der Niveaukonstante und dem Steigungskoeffizienten?**
 
-- **Residuum**:  
-- Der Abstand zwischen einem beobachteten Wert und der Regressionsgeraden
-- **Niveaukonstante**:  
-- der Wert, bei dem die Regressionsgerade die y-Achse schneidet  (oder wie früher in Mathe: der *y-Achsenabschnitt*)
-- **Steigungskoeffizient**:  
-- gibt an, um wieviele Einheiten sich y verändert, wenn sich x um *eine* Einheit ändert
+* **Residuum**:  
+    + Der Abstand zwischen einem beobachteten Wert und der Regressionsgeraden
+* **Niveaukonstante**:  
+    + der Wert, bei dem die Regressionsgerade die y-Achse schneidet
+    + (oder wie früher in Mathe: der *y-Achsenabschnitt*)
+* **Steigungskoeffizient**:  
+    + gibt an, um wieviele Einheiten sich y verändert, wenn sich x um *eine* Einheit ändert
 
 ## Aufgabe 10 
 
