@@ -275,6 +275,10 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 * **Steigungskoeffizient**:  
     + gibt an, um wieviele Einheiten sich y verändert, wenn sich x um *eine* Einheit ändert
 
+## Aufgabe 10 | Beispiel
+
+![](http://stats.jemu.name/qm/meta/Teilnehmer_files/figure-html/plots_byWeek-2.png)
+
 ## Aufgabe 10 
 
 > **Welche formale Beziehung besteht zwischen der Kovarianz und dem Steigungskoeffizienten?**
