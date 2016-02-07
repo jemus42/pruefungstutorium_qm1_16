@@ -78,7 +78,7 @@ a01 %>% kable()
 
 </div>
 
-## Aufgabe 1
+## Aufgabe 1 | Faktorenanalyse
 
 a) Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 b) Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
@@ -149,7 +149,7 @@ pca <- sjt.pca(fkv[-1], numberOfFactors = 5,
 `r pca$knitr`
 </div>
 
-## Aufgabe 3 | Aufgabenzettel 1 & 2 {.flexbox .vcenter}
+## Aufgabe 3 | Zentral- & Variabilitätsmaße {.flexbox .vcenter}
 
 Sie haben Werte des Merkmals „Unterrichtsstunden“ u.a. zur Berechnung der Variabilitätsmaße und Zentralmaße verwendet. Reflektieren Sie die Zentral- und Variabilitätsmaße. Sind alle Statistiken gut geeignet?
 
@@ -165,7 +165,7 @@ ggplot(data = ngo, aes(x = stunzahl)) +
   labs(x = "Unterrsichtsstunden", y = "Häufigkeit")
 ```
 
-## Aufgabe 4 | Aufgabenzettel 5
+## Aufgabe 4 | Standardabweichung (s.a.: trololol)
 
 Sie haben folgende Zahlen vorliegen: `7, 9, 10, 11, 11, 14, 15, 16`. Berechnen Sie für diese Werte die Standardabweichung per Hand.
 
@@ -176,7 +176,7 @@ Standardabweichung: $$\sigma = \sqrt{\frac{1}{n-1} \sum^n_{i = 1} (x_i - \bar{x}
 * $\sigma = \sqrt{\frac{1}{7} \cdot 21.39 + 6.89 + \ldots + 19.14} = \sqrt{\frac{1}{7} \cdot 67.875}$
 * $\sigma = \sqrt{9.696} \approx 3.114$
 
-## Aufgabe 5 | Aufgabenzettel 6
+## Aufgabe 5 | z-Transformation
 
 Berechnen Sie für die Werte `23, 27` und `31` von „stunzahl“ (Auswahl der Schülerinnen der 13. Klasse) die standardisierten Werte per Hand.
 
@@ -192,7 +192,7 @@ z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 * $27 \rightarrow \frac{27 - 29.52}{7.78} \approx -1.13$
 * $31 \rightarrow \frac{31 - 29.52}{7.78} \approx 0.26$
 
-## Aufgabe 6 | Aufgabenzettel 6
+## Aufgabe 6 | Normalverteilung & Wahrscheinlichkeiten
 
 Ein Merkmal ist $N(3, 2)$- verteilt. Berechnen Sie die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte zwischen 2 und 4,5 besitzen und die Wahrscheinlichkeit dafür, dass Merkmalsträger Werte besitzen, die kleiner als 4 sind.
 
@@ -205,7 +205,7 @@ xpnorm(4.5, mean = 3, sd = 2, verbose = F, invisible = T)
 ```
 
 
-## Aufgabe 7 | Aufgabenzettel 7
+## Aufgabe 7 | Vergleichbarkeit
 
 Eine Person hat in drei Tests (T1, T2 und T3) folgende drei Punktzahlen erreicht:
   
@@ -220,7 +220,7 @@ b) Welchen Wert könnte man der Person als Gesamttestwert sinnvoll zuordnen? Und
 * $z_{T2} = \frac{(10 - 15)}{1} = -5$
 * $z_{T3} = \frac{(10 - 20)}{1.5} = -6.\bar{6}$
 
-## Aufgabe 8 | Aufgabenzettel 8 {.flexbox .vcenter}
+## Aufgabe 8 | nominale Zusammenhänge
 
 Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Abschalten“) und dem Spaltenmerkmal „jahrgang“ („Jahrgangsstufe“). Berechnen Sie die Indifferenztabelle und den Chi-Quadrat Wert sowie C und V per Hand. Interpretieren Sie diese Ergebnisse.
 
@@ -255,7 +255,7 @@ $$\text{Cramer's V} = +\sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}}$$
 * $r = 2$ und $c = 3 \rightarrow min(1, 2) = 1$
 * $V = \sqrt{\frac{0.544}{246 \cdot 1}} \approx 0.047$
 
-## Aufgabe 9 | Aufgabenzettel 9
+## Aufgabe 9 | ordinale Zusammenhänge
 
 Sie haben die Werte der Variablen „Begabung“ klassiert, indem die Werte 1, 2 und 3 in den neuen Wert 1, die Werte 4, 5 und 6 in den neuen Wert 2 und die Werte 7, 8 und 9 in den neuen Wert 3 rekodiert wurden. Berechnen Sie auf Basis einer Kontingenztabelle der rekodierten Variablen „Begabung“ und „Jahrgang“ Folgendes per Hand:
 
@@ -291,18 +291,18 @@ $$\text{Gamma} = \frac{N_c - N_d}{N_c + N_d}$$
 
 * $\gamma = \frac{6168 - 3996}{6168 + 3996} \approx 0.214$
 
-## Aufgabe 9 | Gamma und verwandte Statistiken
+* > Wäre eine andere Statistik geeigneter?
 
-> Wäre eine andere Statistik geeigneter?
+## Aufgabe 9 | Gamma und verwandte Statistiken {.flexbox .vcenter}
 
-* ### Somer's d
+### Somer's d
 
-  + $$\text{Somer's d} = \frac{N_c - N_d}{N_c + N_d + t}$$
+$$\text{Somer's d} = \frac{N_c - N_d}{N_c + N_d + t}$$
 
 * Somer's d $= \frac{6168 - 3996}{6168 + 3996 + 9836} = 0.1086$
 
 
-## Aufgabe 10 | Aufgabenzettel 10
+## Aufgabe 10 | lineare Einfachregression
 
 Beantworten Sie folgende Fragen:
 
@@ -364,7 +364,7 @@ ggplot(a10c, aes(x = x, y = y)) +
 - ...ist die Gerade mit den geringsten Residuenquadraten
 - verläuft **immer** durch $P( \bar{x} | \bar{y} )$
 
-## Aufgabe 11 | Aufgabenzettel 11
+## Aufgabe 11 | intervallskalierte Zusammenhänge
 
 Geben Sie die Formel des Korrelationskoeffizienten von Pearson an. Reflektieren Sie nochmals die Herleitung. Berechnen Sie die Korrelation aus folgenden Diät-Daten von Männern:
 
@@ -411,7 +411,7 @@ $$ \frac
   = `r cor(Diaet$Messung_1, Diaet$Messung_2)`$$
 
 
-## Aufgabe 12 | Aufgabenzettel 12
+## Aufgabe 12 | Beurteilerübereinstimmung
 
 27 Patienten sind von zwei Ärzten untersucht und im Hinblick auf ihren Gesundheitszustand in der folgenden Form als krank bzw. gesund eingestuft worden:
 
@@ -432,17 +432,17 @@ $$ h_b = \frac{1}{27} \cdot (8 + 12) \approx 0,741 $$
 $$ h_e = \frac{1}{27} \cdot (4,\bar{8} + 8,\bar{8}) \approx 0,51 $$
 $$ Kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,47 $$
 
-## Aufgabe 13 
+## Aufgabe 13 | lineare Einfachregression
 
 Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Vergleich zu dem Wert 0):
 
 ![](http://dump.jemu.name/Ar5MX.png)
 
-## Aufgabe 14
+## Aufgabe 14 | lineare Einfachregression
 
 Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm.
 
-## Aufgabe 15
+## Aufgabe 15 | lineare Mehrfachregressionen
 
 Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
 
@@ -459,6 +459,6 @@ Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten 
 - Partialkorrelationen
 
 
-## Aufgabe 16
+## Aufgabe 16 | lineare Mehrfachregressionen
 
 Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
