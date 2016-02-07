@@ -34,6 +34,7 @@ library(qmtut)
 library(mosaic)
 library(magrittr)
 library(car)
+library(formattable)
 
 # NGO & FKV Datensatz einlesen
 # load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
@@ -97,13 +98,41 @@ Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen kö
 
 > Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
 
-$$ 0.571^2 +  0.334^2 - 0.323^2 = 0.333 $$
+* $$ 0.571^2 +  0.334^2 - 0.323^2 = 0.333 $$
 
-> Welchen Wert besitzt der drittgrößte Eigenwert?
+* > Welchen Wert besitzt der drittgrößte Eigenwert?
 
 Faktor 1 | Faktor 2 | Faktor 3 
 ---------|----------|---------
-`r sum(a01$K1)` | `r sum(a01$K2)` | `r sum(a01$K2)`
+`r sum(a01$K1)` | `r sum(a01$K2)` | `r sum(a01$K3)`
+
+* > Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
+
+  + $$ .036^2 - 0.1^2 - 0.311^2 + 0.053^2 + ... = `r sum(a01$K3^2)` $$
+
+## Aufgabe 1
+
+> Warum enthält die Komponenten-Matrix vermutlich nur drei Spalten?
+
+## Aufgabe 1
+
+> Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
+
+<div class="columns-2">
+```{r A01_f}
+formattable(a01, list(
+            K1 = formatter("span", 
+                 style = x ~ ifelse(x >= "0.75", style(color = "red", font.weight = "bold"), NA)),
+            K2 = formatter("span", 
+                 style = x ~ ifelse(x >= "0.64", style(color = "red", font.weight = "bold"), NA)),
+            K3 = formatter("span", 
+                 style = x ~ ifelse(x >= "0.5", style(color = "red", font.weight = "bold"), NA))))
+```
+</div>
+
+## Aufgabe 1
+
+> Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
 ## Aufgabe 2 | Faktorenanalyse
 
@@ -262,9 +291,13 @@ $$\text{Gamma} = \frac{N_c - N_d}{N_c + N_d}$$
 
 * $\gamma = \frac{6168 - 3996}{6168 + 3996} \approx 0.214$
 
-### Somer's d
+## Aufgabe 9 | Gamma und verwandte Statistiken
 
-$$\text{Somer's d} = \frac{N_c - N_d}{N_c + N_d + t}$$
+> Wäre eine andere Statistik geeigneter?
+
+* ### Somer's d
+
+  + $$\text{Somer's d} = \frac{N_c - N_d}{N_c + N_d + t}$$
 
 * Somer's d $= \frac{6168 - 3996}{6168 + 3996 + 9836} = 0.1086$
 
