@@ -35,7 +35,7 @@ library(mosaic)
 library(magrittr)
 library(car)
 library(formattable)
-library(Gmisc)
+library(htmlTable)
 
 # NGO & FKV Datensatz einlesen
 # load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
@@ -127,13 +127,13 @@ Faktor 1 | Faktor 2 | Faktor 3
 
 <div class="columns-2">
 ```{r A01_f}
-formattable(a01, list(
-            K1 = formatter("span", 
-                 style = x ~ ifelse(x >= "0.75", style(color = "red", font.weight = "bold"), NA)),
-            K2 = formatter("span", 
-                 style = x ~ ifelse(x >= "0.64", style(color = "red", font.weight = "bold"), NA)),
-            K3 = formatter("span", 
-                 style = x ~ ifelse(x >= "0.5", style(color = "red", font.weight = "bold"), NA))))
+  formattable(a01, list(
+    K1 = formatter("span", 
+                   style = x ~ ifelse(x == max(a01$K1), style(color = "red", font.weight = "bold"), NA)),
+    K2 = formatter("span", 
+                   style = x ~ ifelse(x == max(a01$K1), style(color = "red", font.weight = "bold"), NA)),
+    K3 = formatter("span", 
+                   style = x ~ ifelse(x == max(a01$K1), style(color = "red", font.weight = "bold"), NA))))
 ```
 </div>
 
