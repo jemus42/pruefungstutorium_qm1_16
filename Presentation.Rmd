@@ -35,6 +35,7 @@ library(mosaic)
 library(magrittr)
 library(car)
 library(formattable)
+library(Gmisc)
 
 # NGO & FKV Datensatz einlesen
 # load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
@@ -93,6 +94,12 @@ Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen kö
 ## Aufgabe 1
 
 > Was bedeuten die drei Werte innerhalb der zweiten Zeile?
+
+```{r A01_a}
+  cols <- with(a01, ifelse(Merkmal == "A2", 'green', 'white'))
+  
+  htmlTable(as.matrix(a01), col.rgroup = cols)
+```
 
 ## Aufgabe 1
 
@@ -434,17 +441,17 @@ $$ Kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,4
 
 ## Aufgabe 13 | lineare Einfachregression
 
-Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Vergleich zu dem Wert 0):
+> Wie fällt die Kovariation in den Streudiagrammen 1 bis 3 tendenziell aus (im Vergleich zu dem Wert 0):
 
 ![](http://dump.jemu.name/Ar5MX.png)
 
 ## Aufgabe 14 | lineare Einfachregression
 
-Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm.
+> Versuchen Sie das Prinzip der Kovariation grafisch in einem Streudiagramm zu veranschaulichen. Zeichnen Sie hierfür ein beliebiges Streudiagramm.
 
 ## Aufgabe 15 | lineare Mehrfachregressionen
 
-Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
+> Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
 
 - Verwirrung
 - Kopfschmerzen
@@ -455,10 +462,12 @@ Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten 
 
 ## Aufgabe 15
 
+> Erläutern Sie die Probleme, die im Rahmen einer multiplen Regression auftreten können. 
+
 - (Multi-)Kolinearität
 - Partialkorrelationen
 
 
 ## Aufgabe 16 | lineare Mehrfachregressionen
 
-Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
+> Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
