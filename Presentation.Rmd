@@ -89,6 +89,21 @@ f) Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten M
 g) Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen
 Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
+## Aufgabe 1
+
+> Was bedeuten die drei Werte innerhalb der zweiten Zeile?
+
+## Aufgabe 1
+
+> Wie groß ist die Kommunalität des durch „A10“ gekennzeichneten Merkmals?
+
+$$ 0.571^2 +  0.334^2 - 0.323^2 = 0.333 $$
+
+> Welchen Wert besitzt der drittgrößte Eigenwert?
+
+Faktor 1 | Faktor 2 | Faktor 3 
+---------|----------|---------
+`r sum(a01$K1)` | `r sum(a01$K2)` | `r sum(a01$K2)`
 
 ## Aufgabe 2 | Faktorenanalyse
 
