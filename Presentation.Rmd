@@ -347,7 +347,15 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 ## Aufgabe 10 - Beispiel
 
-![](http://stats.jemu.name/qm/meta/Teilnehmer_files/figure-html/plots_byWeek-2.png)
+<img src="http://stats.jemu.name/qm/meta/Teilnehmer_files/figure-html/plots_byWeek-2.png" width="80%">
+
+## Aufgabe 10 | Residuen
+
+<img src="http://dump.jemu.name/tI7Hc.png" width="80%">
+
+## Aufgabe 10 | Residuenquadrate
+
+<img src="http://dump.jemu.name/8XUJb.png" width="80%">
 
 ## Aufgabe 10 
 
@@ -517,3 +525,11 @@ ppcor::pcor(ngo[c("deutsch", "mathe", "englisch")])$estimate %>% kable
 ```
 
 </div>
+
+# Abschluss
+
+### Noch Fragen?
+
+#### stats.jemu.name/qm/QM1/Presentation.html
+
+#### stats.jemu.name/qm/QM1/Presentation_web.html
