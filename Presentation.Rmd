@@ -367,13 +367,28 @@ $$ z_i = \frac {x_i - \bar{x} }{ \sigma_x }$$
 
 > **Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?**
 
-```{r A10_c}
+```{r A10_c1}
+a10c <- data.frame("x" = c(1:100),
+                   "y" = rep(6, 100))
+
+ggplot(a10c, aes(x = x, y = y)) +
+  geom_smooth(method = "lm", se = F) +
+  scale_y_continuous(limits = c(5.6, 6.4)) +
+  labs(x = "", y = "") + theme_bw()
+```
+
+## Aufgabe 10
+
+> **Was bedeutet es, wenn die Regressionsgerade parallel zur X-Achse verläuft?**
+
+```{r A10_c2}
 a10c <- data.frame("x" = c(1:100),
                    "y" = rep(6, 100))
 
 ggplot(a10c, aes(x = x, y = y)) +
   geom_smooth(method = "lm", se = F) +
   geom_point(position = "jitter") +
+  scale_y_continuous(limits = c(5.6, 6.4)) +
   labs(x = "", y = "") + theme_bw()
 ```
 
