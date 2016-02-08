@@ -269,7 +269,7 @@ $$C = +\sqrt{\frac{\chi^2}{\chi^2 + n}}$$
 
 * $C = \sqrt{\frac{0.544}{0.544 + 246}} \approx 0.047$
 
-## Aufgabe 8 | Cramer's V
+## Aufgabe 8 | Cramer's V {.flexbox .vcenter}
 
 $$\text{Cramer's V} = +\sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}}$$
 
@@ -277,7 +277,7 @@ $$\text{Cramer's V} = +\sqrt{\frac{\chi^2}{n \cdot min(r-1, c-1)}}$$
 * $V = \sqrt{\frac{0.544}{246 \cdot 1}} \approx 0.047$
 
 
-## Aufgabe 9 | Ordinale Zusammenhänge
+## Aufgabe 9 | Ordinale Zusammenhänge {.flexbox .vcenter}
 
 Sie haben die Werte der Variablen „Begabung“ klassiert, indem die Werte 1, 2 und 3 in den neuen Wert 1, die Werte 4, 5 und 6 in den neuen Wert 2 und die Werte 7, 8 und 9 in den neuen Wert 3 rekodiert wurden. Berechnen Sie auf Basis einer Kontingenztabelle der rekodierten Variablen „Begabung“ und „Jahrgang“ Folgendes per Hand:
 
@@ -486,3 +486,19 @@ $$ Kappa = \frac{h_b - h_e}{1 - h_e} = \frac{0,741 - 0,51}{1 - 0,51} \approx 0,4
 ## Aufgabe 16 | lineare Mehrfachregressionen
 
 > Was versteht man unter dem Begriff „Partialkorrelation“? Geben Sie ein Beispiel.
+
+<div class="columns-2">
+
+### Korrelationsmatrix
+
+```{r a15_cor}
+cor(ngo[c("deutsch", "mathe", "englisch")]) %>% kable
+```
+
+### Partialkorrelation
+
+```{r a16_pcor}
+ppcor::pcor(ngo[c("deutsch", "mathe", "englisch")])$estimate %>% kable
+```
+
+</div>
