@@ -365,7 +365,7 @@ d) Welche Eigenschaften besitzt die Regressionsgerade?
 
 $$Cov_{x, y} = s_{x, y} = \sum_{i=1}^{n} \frac { (x_i - \bar{x})(y_i - \bar{y}) }{ n - 1 }$$
 
-#### Steigungskoeffizienten
+#### Steigungskoeffizient
 
 $$ b = \frac { s_{x, y} }{ s_{x}^2 } $$
 
