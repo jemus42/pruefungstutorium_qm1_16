@@ -209,9 +209,9 @@ values <- ngo %>% filter(jahrgang == "13", geschl == "Weiblich") %>%
 z-Standardisierung: $$z_i = \frac{x_i - \bar{x}}{\sigma}$$
 
 * Werte: $\bar{x} = `r values$mean`$ und $\sigma = `r values$sd`$
-* $23 \rightarrow \frac{23 - 29.52}{7.78} \approx -0.838$
-* $27 \rightarrow \frac{27 - 29.52}{7.78} \approx -1.13$
-* $31 \rightarrow \frac{31 - 29.52}{7.78} \approx 0.26$
+* $23 \rightarrow \frac{23 - 29.52}{5.78158} \approx -1.1277194$
+* $27 \rightarrow \frac{27 - 29.52}{5.78158} \approx -0.4358670$
+* $31 \rightarrow \frac{31 - 29.52}{5.78158} \approx 0.2559854$
 
 ## Aufgabe 6 | Normalverteilung & Wahrscheinlichkeiten
 
