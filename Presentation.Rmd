@@ -112,7 +112,7 @@ Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen kö
 
 Faktor 1 | Faktor 2 | Faktor 3 
 ---------|----------|---------
-`r sum(a01$K1)` | `r sum(a01$K2)` | `r sum(a01$K3)`
+`r sum(a01$K1^2)` | `r sum(a01$K2^2)` | `r sum(a01$K3^2)`
 
 
 * > Wie viel Prozent der Gesamtvarianz aller 15 in die Faktorenanalyse einbezogenen (standardisierten) Merkmale wird durch den 3. Faktor erklärt?
