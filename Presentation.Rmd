@@ -3,12 +3,6 @@ title: "Prüfungstutorium QM1"
 author: "Tobi, Lukas"
 date: "Rendered at `r format(Sys.time(), '%F %H:%M')`"
 output:
-  html_document:
-    fig_caption: yes
-    fig_width: 9
-    number_sections: no
-    self_contained: yes
-    toc: yes
   ioslides_presentation:
     css: styles.css
     fig_height: 4
@@ -19,6 +13,12 @@ output:
     smaller: yes
     transition: slower
     widescreen: yes
+  html_document:
+    fig_caption: yes
+    fig_width: 9
+    number_sections: no
+    self_contained: yes
+    toc: yes
 ---
 
 ```{r global_options, include=FALSE}
