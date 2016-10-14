@@ -9,7 +9,8 @@ output:
     fig_width: 8
     incremental: yes
     logo: RStudio-Ball.png
-    self_contained: yes
+    self_contained: no
+    lib_dir: "assets"
     smaller: yes
     transition: slower
     widescreen: yes
@@ -17,20 +18,21 @@ output:
     fig_caption: yes
     fig_width: 9
     number_sections: no
-    self_contained: yes
+    self_contained: no
+    lib_dir: "assets"
     toc: yes
 ---
 
 ```{r global_options, include=FALSE}
-knitr::opts_chunk$set(fig.path = "plots/", echo = F, warning = F, message = F)
-
+knitr::opts_chunk$set(fig.path = "plots/", fig.align = "center", 
+                      fig.retina = 2, echo = F, warning = F, message = F)
 # Package init script
 #suppressWarnings(source("http://stats.jemu.name/qm/tools/package-init.R"))
 library(sjPlot)
 library(dplyr)
 library(knitr)
 library(ggplot2)
-library(qmtut)
+library(tadaatoolbox)
 library(mosaic)
 library(magrittr)
 library(car)
@@ -39,7 +41,6 @@ library(htmlTable)
 library(tidyr)
 
 # NGO & FKV Datensatz einlesen
-# load(url("http://stats.jemu.name/qm/data/ngo")) # qmtut does that
 fkv <- haven::read_sav("./data/fkv.sav")
 
 # 3 digits are enough
@@ -97,9 +98,9 @@ Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen kö
 > Was bedeuten die drei Werte innerhalb der zweiten Zeile?
 
 ```{r A01_a}
-  cols <- with(a01, ifelse(Merkmal == "A2", 'green', 'white'))
-  
-  htmlTable(as.matrix(a01), col.rgroup = cols)
+cols <- with(a01, ifelse(Merkmal == "A2", 'green', 'white'))
+
+htmlTable(as.matrix(a01), col.rgroup = cols)
 ```
 
 ## Aufgabe 1
@@ -128,7 +129,7 @@ Faktor 1 | Faktor 2 | Faktor 3
 > Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 <div>
-![](ladungen.png)
+![](plots/ladungen.png)
 </div> 
 
 ## Aufgabe 1
@@ -136,7 +137,7 @@ Faktor 1 | Faktor 2 | Faktor 3
 > Auf welche Faktoren laden die durch „A1“ bis „A15“ gekennzeichneten Merkmale jeweils am höchsten?
 
 <div>
-![](ladungen_max.png)
+![](plots/ladungen_max.png)
 </div> 
 
 ## Aufgabe 1
@@ -144,7 +145,7 @@ Faktor 1 | Faktor 2 | Faktor 3
 > Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
 <div>
-![](ladungen.png)
+![](plots/ladungen.png)
 </div> 
 
 ## Aufgabe 1
@@ -152,7 +153,7 @@ Faktor 1 | Faktor 2 | Faktor 3
 > Gibt es bei den - im Rahmen der Suche nach einer Einfachstruktur - innerhalb von „f)“ vorgenommenen Zuordnungen an irgendeiner Stelle ein Problem, sodass es sinnvoll erscheinen könnte, eine Rotation durchzuführen?
 
 <div>
-![](ladungen_pcor.png)
+![](plots/ladungen_pcor.png)
 </div>  
 
 ## Aufgabe 2 | Faktorenanalyse
@@ -162,8 +163,8 @@ Führen Sie eine Hauptkomponentenanalyse für den FKV- Datensatz durch. Prüfen 
 ## Aufgabe 2
 
 ```{r A02_pca}
-pca <- sjt.pca(fkv[-1], numberOfFactors = 5,
-               useViewer = F, no.output = T)
+pca <- sjt.pca(data = fkv[-1], nmbr.fctr = 5,
+               use.viewer = F, no.output = T)
 ```
 
 <div class="columns-2">
@@ -180,10 +181,10 @@ Sie haben Werte des Merkmals „Unterrichtsstunden“ u.a. zur Berechnung der Va
 mvalues <- data.frame(Zentralmaß = factor(c("Mittelwert", "Median", "Modus")),
                       Wert = c(mean(ngo$stunzahl), median(ngo$stunzahl), modus(ngo$stunzahl)))
 
-ggplot(data = ngo, aes(x = stunzahl)) +
-  geom_histogram(binwidth = 1) +
-  geom_vline(data = mvalues, aes(xintercept = Wert, colour = Zentralmaß), size = 2) +
-  labs(x = "Unterrsichtsstunden", y = "Häufigkeit")
+# ggplot(data = ngo, aes(x = stunzahl)) +
+#   geom_histogram(binwidth = 1) +
+#   geom_vline(data = mvalues, aes(xintercept = Wert, colour = Zentralmaß), size = 2) +
+#   labs(x = "Unterrsichtsstunden", y = "Häufigkeit")
 ```
 
 ## Aufgabe 4 | Standardabweichung (s.a.: trololol)
@@ -247,8 +248,8 @@ Erstellen Sie eine Kontingenztabelle mit dem Zeilenmerkmal „abschalt“ (Absch
 
 ```{r a08}
 tabelle <- sjt.xtab(ngo$abschalt, ngo$jahrgang, 
-                    showRowPerc = T, showExpected = T, showLegend = F, showSummary = F,
-                    useViewer = F, no.output = T)
+                    show.row.prc = T, show.exp = T, show.legend = F, show.summary = F,
+                    use.viewer = F, no.output = T)
 ```
 
 `r tabelle$knitr`
@@ -294,9 +295,9 @@ f) Wäre eine andere Statistik geeigneter?
 ngo %<>% mutate(begabung_k = car::recode(begabung, "1:3=1; 4:6=2; 7:9=3"))
 
 tabelle <- sjt.xtab(ngo$begabung_k, ngo$jahrgang, 
-                    variableLabels = c("Begabung (klassiert)", "Jahrgang"),
-                    showRowPerc = F, showExpected = F, showLegend = F, showSummary = F,
-                    useViewer = F, no.output = T)
+                    var.labels = c("Begabung (klassiert)", "Jahrgang"),
+                    show.row.prc = F, show.exp = F, show.legend = F, show.summary = F,
+                    use.viewer = F, no.output = T)
 ```
 
 `r tabelle$knitr`
